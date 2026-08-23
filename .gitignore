@@ -1,0 +1,22 @@
+# CLion
+.idea/
+cmake-build-*/
+*.iml
+
+# Compilação
+*.exe
+*.out
+*.o
+*.obj
+*.dll
+*.dylib
+
+# Arquivos temporários
+*.tmp
+*.log
+*.swp
+*.swo
+
+# Windows
+Thumbs.db
+.DS_Store
