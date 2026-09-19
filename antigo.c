@@ -52,6 +52,8 @@ void trocar(int i, int j)
     v[i] = v[j];
     v[j] = aux;
 }
+
+
 /* ==================================================================
    TODO 1 - ORDENACAO POR SELECAO, MAS DO MAIOR PARA O MENOR
 
@@ -72,18 +74,9 @@ void trocar(int i, int j)
    - terminado o laco de dentro, some 1 em 'movimentacoes' e chame
      trocar(i, maior).
    ================================================================== */
-void selectionSortDecrescente(int n){
-    int i, j, maior;
-    for (i = 0; i < n - 1; i++) {
-        maior = i;
-        for (j = i + 1; j < n; j++) {
-            comparacoes += 1;
-            if (v[j] > v[maior])
-                maior = j;
-        }
-        movimentacoes += 1;
-        trocar(i, maior);
-    }
+void selectionSortDecrescente(int n)
+{
+
 }
 
 
@@ -104,21 +97,10 @@ void selectionSortDecrescente(int n){
    ================================================================== */
 void insertionSort(int n)
 {
-    int i, j, chave;
-    for (j = 1; j < n; j++) {
-        chave = v[j];
-        i = j - 1;
-        while (i >= 0 && v[i] > chave) {
-            comparacoes = comparacoes + 1;
-            movimentacoes = movimentacoes + 1;
-            v[i + 1] = v[i];
-            i = i - 1;
-        }
-        if (i >= 0) /* parou por achar o lugar */
-            comparacoes = comparacoes + 1;
-        v[i + 1] = chave;
-    }
+
 }
+
+
 /* ==================================================================
    CONSERTE - QUESTAO 7: a insercao do colega
 
@@ -131,24 +113,24 @@ void insertionSort(int n)
    ================================================================== */
 void insertionSortDoColega(int n)
 {
-    int i, j, menor;
+    int i, j;
+
     for (j = 1; j < n; j++) {
-        menor = v[j];
         i = j - 1;
-        while (i >= 0 && v[i] > menor) {
-            comparacoes += 1;
-            movimentacoes += 1;
+
+        while (i >= 0 && v[i] > v[j]) {
+            comparacoes   = comparacoes + 1;
+            movimentacoes = movimentacoes + 1;
             v[i + 1] = v[i];
-            i -= 1;
+            i = i - 1;
         }
 
         if (i >= 0)
-            comparacoes += 1;
+            comparacoes = comparacoes + 1;
 
-        v[i + 1] = menor;
+        v[i + 1] = v[j];
     }
-    }
-
+}
 
 
 /* ==================================================================
