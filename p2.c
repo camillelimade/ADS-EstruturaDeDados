@@ -115,8 +115,8 @@ int buscaBinariaDoColega(int n, int x) {
     int lo = 0;
     int hi = n - 1;
     int mid;
-
-    while (lo < hi) {
+    
+    while (lo <= hi) {
         mid = (lo + hi) / 2;
         comparacoes = comparacoes + 1;
 
